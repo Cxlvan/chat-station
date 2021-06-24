@@ -22,8 +22,8 @@ export const MessageBox = () => {
         <div className="w-full h-96 bg-gray-200 my-2 rounded-md p-2 gap-2 flex flex-col overflow-scroll">
             {
                 uniqueMessages.map((message: any, v: number) => (
-                    <div className={`${message.username !== myusername ? '' : 'self-end'} w-2/3`}>
-                        <div ref={latestChat} className={`rounded-md mx-2 justify-center p-2 flex flex-col ${message.username !== myusername ? 'bg-gray-700 text-gray-100' : 'bg-indigo-500 text-white self-end'}`} key={message.time}>
+                    <div ref={latestChat} className={`${message.username !== myusername ? '' : 'self-end'} w-2/3`} key={message.time}>
+                        <div className={`rounded-md mx-2 justify-center p-2 flex flex-col ${message.username !== myusername ? 'bg-gray-700 text-gray-100' : 'bg-indigo-500 text-white self-end'}`}>
                             <h3 className="font-semibold flex flex-row gap-2 items-center">
                                 {message.username}
                                 <span className="inline text-xs text-opacity-60">
