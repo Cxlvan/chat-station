@@ -30,7 +30,7 @@ export const Dashboard = () => {
     let clearAllChat = () => {
         clearChat()
         addMessage({
-            username: "bobby (system)",
+            username: "Bot (system)",
             message: "The chat has been cleared for you!",
             time: Date.now()
         })
