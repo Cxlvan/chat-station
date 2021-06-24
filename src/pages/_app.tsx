@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     setUsername(localStorage.getItem('username') || '')
     if(socket === null){
-      let windowSocket = io("http://142.44.136.240:5469/ws/", { upgrade: true, transports: ['websocket'], secure: false })
+      let windowSocket = io("http://142.44.136.240:5469/ws/", { upgrade: false, transports: ['websocket'], secure: false })
       setSocket(windowSocket);
     }
   }, [])
