@@ -3,8 +3,8 @@ import { useMessages } from "../contexts/Messages"
 import { useUsername } from "../contexts/UserContext"
 
 export const MessageBox = () => {
-    const messages = useMessages(state => state.messages)
-    const myusername = useUsername(state => state.username)
+    const messages = useMessages((state: any) => state.messages)
+    const myusername = useUsername((state: any) => state.username)
     let messageSet = messages.filter(function(item: any, pos: any) {
         return messages.indexOf(item) == pos;
     })
@@ -15,7 +15,7 @@ export const MessageBox = () => {
     const latestChat = useRef(null) 
     useEffect(() => {
         if(latestChat.current){
-            latestChat.current.focus()
+            (latestChat.current || {focus: () => {}}).focus()
         }
     }, [messages])
     return (

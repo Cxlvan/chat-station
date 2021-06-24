@@ -5,7 +5,7 @@ import {PickUsername} from '../components/PickUsername'
 import { Dashboard } from '../components/Dashboard'
 export default function Home() {
   // @ts-ignore
-  const username = useUsername(state => state.username)
+  const username = useUsername((state: any) => state.username)
   return (
     <div className={styles.container}>
       <Head>

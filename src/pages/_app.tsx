@@ -6,9 +6,9 @@ import { useUsername } from '../contexts/UserContext'
 import { useSocket } from '../contexts/SocketContext'
 import { io, Socket } from 'socket.io-client'
 function MyApp({ Component, pageProps }: AppProps) {
-  let setUsername = useUsername(state => state.setUser)
-  const setSocket = useSocket(state => state.setSocket)
-  const socket = useSocket(state => state.socket)
+  let setUsername = useUsername((state: any) => state.setUser)
+  const setSocket = useSocket((state: any) => state.setSocket)
+  const socket = useSocket((state: any) => state.socket)
   
   useEffect(() => {
     setUsername(localStorage.getItem('username') || '')

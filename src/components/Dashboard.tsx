@@ -6,12 +6,12 @@ import { useUsername } from "../contexts/UserContext"
 import { MessageBox } from "./MessageBox"
 
 export const Dashboard = () => {
-    const username = useUsername(state => state.username)
-    const setUsername = useUsername(state => state.setUser)
+    const username = useUsername((state: any) => state.username)
+    const setUsername = useUsername((state: any) => state.setUser)
     const [messageTyped, setMessageTyped] = useState("")
-    const socket:Socket = useSocket(state => state.socket)
-    const addMessage = useMessages(state => state.addMessage)
-    const clearChat = useMessages(state => state.clearChat)
+    const socket:Socket = useSocket((state: any) => state.socket)
+    const addMessage = useMessages((state: any) => state.addMessage)
+    const clearChat = useMessages((state: any) => state.clearChat)
     const sendMessage = () =>{
         setMessageTyped("")
         let newMessage = {

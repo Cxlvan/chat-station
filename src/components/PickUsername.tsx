@@ -3,8 +3,8 @@ import { useUsername } from "../contexts/UserContext"
 
 export const PickUsername = () => {
     const [pickUsername, setPickUsername] = useState("")
-    const username = useUsername(state => state.username)
-    const setUsername = useUsername(state => state.setUser)
+    const username = useUsername((state: any) => state.username)
+    const setUsername = useUsername((state: any) => state.setUser)
     return (
         <div className="flex flex-col items-center justify-center w-96">
             <h1 className="text-3xl">Currently logged out, pick a username to login as!</h1>

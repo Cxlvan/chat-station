@@ -8,10 +8,8 @@ interface message {
 export const useMessages = create(set => ({
     messages: [],
     clearChat: () => {set(state =>( { ...state, messages: [] }))},
-    addMessage: (message) => {set(state =>( { ...state, messages: [...state.messages, message] }))}
+    addMessage: (message: message) => {set((state: any) =>( { ...state, messages: [...state.messages, message] }))}
   } as {
-      messages: message[],
-      addMessage: (message: message) => void;
-      clearChat: () => void;
+    [key: string]: any
   }
 ))
